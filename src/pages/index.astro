@@ -367,6 +367,11 @@ const defaultActiveChipId = 'platos-especiales';
 
   <script>
     (() => {
+      if (location.hash) {
+        history.replaceState(null, '', `${location.pathname}${location.search}`);
+        window.scrollTo(0, 0);
+      }
+
       const money = (value) => {
         try {
           return new Intl.NumberFormat('es-MX', {
@@ -558,13 +563,10 @@ const defaultActiveChipId = 'platos-especiales';
           lockTo(id);
           setActive(id);
           scrollToId(id);
-          history.replaceState(null, '', `#${id}`);
         });
       });
 
-      const initial = (location.hash || '').replace('#', '') || 'platos-especiales';
-      setActive(initial);
-      if (location.hash) scrollToId(initial);
+      setActive('platos-especiales');
 
       const sectionEls = Array.from(document.querySelectorAll('section[id]'));
       stickyShortcutsEl = document.getElementById('sticky-shortcuts');
