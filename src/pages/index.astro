@@ -547,22 +547,32 @@ const defaultActiveChipId = 'platos-especiales';
       const sectionEls = Array.from(document.querySelectorAll('section[id]'));
       stickyShortcutsEl = document.getElementById('sticky-shortcuts');
 
-      const getMarkerDocY = () => {
-        if (!stickyShortcutsEl) return window.scrollY + 140;
-        const rect = stickyShortcutsEl.getBoundingClientRect();
-        const markerViewportY = rect.top + rect.height + 8;
-        return window.scrollY + markerViewportY;
-      };
-
       const getActiveFromScroll = () => {
-        const markerDocY = getMarkerDocY();
-        let currentId = sectionEls[0]?.id;
-
-        for (const s of sectionEls) {
-          const top = window.scrollY + s.getBoundingClientRect().top;
-          if (top <= markerDocY) currentId = s.id;
+        const lastSectionId = sectionEls[sectionEls.length - 1]?.id;
+        if (lastSectionId) {
+          const scrollBottom = window.scrollY + window.innerHeight;
+          const pageBottom = Math.max(
+            document.body?.scrollHeight || 0,
+            document.documentElement?.scrollHeight || 0,
+          );
+          if (pageBottom - scrollBottom <= 64) return lastSectionId;
         }
 
+        const stickyRect = stickyShortcutsEl?.getBoundingClientRect();
+        const stickyBottom = stickyRect ? stickyRect.top + stickyRect.height : 0;
+        const extra = Math.min(200, Math.max(80, window.innerHeight * 0.22));
+        const markerY = stickyBottom + extra;
+
+        for (const s of sectionEls) {
+          const rect = s.getBoundingClientRect();
+          if (rect.top <= markerY && rect.bottom >= markerY) return s.id;
+        }
+
+        let currentId = sectionEls[0]?.id;
+        for (const s of sectionEls) {
+          const rect = s.getBoundingClientRect();
+          if (rect.top <= markerY) currentId = s.id;
+        }
         return currentId;
       };
 
