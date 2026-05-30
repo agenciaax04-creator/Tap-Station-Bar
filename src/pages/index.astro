@@ -494,6 +494,12 @@ const defaultActiveChipId = 'platos-especiales';
 
       const chipEls = Array.from(document.querySelectorAll('[data-chip]'));
 
+      let stickyShortcutsEl = null;
+      const getStickyOffset = () => {
+        const h = stickyShortcutsEl?.getBoundingClientRect().height;
+        return (typeof h === 'number' && Number.isFinite(h) ? h : 120) + 16;
+      };
+
       let lockedId = null;
       let lockTimer = null;
 
@@ -518,7 +524,8 @@ const defaultActiveChipId = 'platos-especiales';
       const scrollToId = (id) => {
         const target = document.getElementById(id);
         if (!target) return;
-        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        const top = window.scrollY + target.getBoundingClientRect().top - getStickyOffset();
+        window.scrollTo({ top: Math.max(0, top), behavior: 'smooth' });
       };
 
       chipEls.forEach((el) => {
@@ -538,7 +545,7 @@ const defaultActiveChipId = 'platos-especiales';
       if (location.hash) scrollToId(initial);
 
       const sectionEls = Array.from(document.querySelectorAll('section[id]'));
-      const stickyShortcutsEl = document.getElementById('sticky-shortcuts');
+      stickyShortcutsEl = document.getElementById('sticky-shortcuts');
 
       const getMarkerDocY = () => {
         if (!stickyShortcutsEl) return window.scrollY + 140;
@@ -552,7 +559,7 @@ const defaultActiveChipId = 'platos-especiales';
         let currentId = sectionEls[0]?.id;
 
         for (const s of sectionEls) {
-          const top = s.offsetTop;
+          const top = window.scrollY + s.getBoundingClientRect().top;
           if (top <= markerDocY) currentId = s.id;
         }
 
@@ -570,7 +577,6 @@ const defaultActiveChipId = 'platos-especiales';
           if (!id) return;
 
           setActive(id);
-          history.replaceState(null, '', `#${id}`);
         });
       };
 
