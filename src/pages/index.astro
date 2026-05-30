@@ -516,6 +516,30 @@ const defaultActiveChipId = 'platos-especiales';
       );
 
       sectionEls.forEach((s) => observer.observe(s));
+
+      const lastSectionId = sectionEls[sectionEls.length - 1]?.id;
+      let raf = 0;
+      const onScroll = () => {
+        if (raf) return;
+        raf = window.requestAnimationFrame(() => {
+          raf = 0;
+          if (!lastSectionId) return;
+          if (lockedId) return;
+
+          const doc = document.documentElement;
+          const scrollBottom = window.scrollY + window.innerHeight;
+          const pageBottom = doc.scrollHeight;
+
+          if (pageBottom - scrollBottom <= 8) {
+            setActive(lastSectionId);
+            history.replaceState(null, '', `#${lastSectionId}`);
+          }
+        });
+      };
+
+      window.addEventListener('scroll', onScroll, { passive: true });
+      window.addEventListener('resize', onScroll);
+      onScroll();
     })();
   </script>
 </BaseLayout>
