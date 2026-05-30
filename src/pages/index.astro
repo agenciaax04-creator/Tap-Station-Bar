@@ -552,14 +552,16 @@ const defaultActiveChipId = 'platos-especiales';
 
         for (const s of sectionEls) {
           const rect = s.getBoundingClientRect();
-          if (rect.top <= markerY && rect.bottom > markerY) return s.id;
+          if (rect.top <= markerY && rect.bottom >= markerY) return s.id;
         }
 
         if (lastSectionId) {
-          const doc = document.documentElement;
           const scrollBottom = window.scrollY + window.innerHeight;
-          const pageBottom = doc.scrollHeight;
-          if (pageBottom - scrollBottom <= 8) return lastSectionId;
+          const pageBottom = Math.max(
+            document.body?.scrollHeight || 0,
+            document.documentElement?.scrollHeight || 0,
+          );
+          if (pageBottom - scrollBottom <= 64) return lastSectionId;
         }
 
         let current = sectionEls[0]?.id;
