@@ -139,166 +139,193 @@ const defaultActiveChipId = 'platos-especiales';
 ---
 
 <BaseLayout title="Tap Station · Menú">
-  <div class="mx-auto w-full max-w-md bg-neutral-950 md:max-w-3xl">
-    <header class="bg-neutral-900 px-4 pb-4 pt-4 ring-1 ring-white/5 md:px-6">
-      <div class="relative -mx-4 -mt-4 mb-0 h-28 overflow-hidden md:-mx-6 md:h-44">
-        <img
-          src="/tap-station-hero.jpeg"
-          alt=""
-          width="1200"
-          height="300"
-          class="h-full w-full object-cover opacity-70"
-          loading="lazy"
-        />
-        <div class="absolute inset-0 bg-gradient-to-t from-neutral-900 via-neutral-900/40 to-transparent"></div>
-      </div>
-
-      <div class="relative -mt-7 flex items-start gap-3 md:-mt-10">
-        <img
-          src="/tap-station-logo.jpeg"
-          alt="Tap Station"
-          class="h-14 w-14 shrink-0 rounded-xl object-cover bg-neutral-800 ring-1 ring-white/10 shadow-[0_0_25px_rgba(212,175,55,0.20)] md:h-16 md:w-16"
-          loading="eager"
-        />
-
-        <div class="min-w-0 flex-1">
-          <div class="text-xl font-extrabold tracking-tight text-white">Tap Station</div>
-          <div class="text-sm font-semibold text-neutral-400">Menú Digital</div>
-        </div>
-
-        <div class="shrink-0 text-right">
-          <div class="flex items-center justify-end gap-2">
-            <a
-              href="https://www.facebook.com/share/14fUHhw5V9N/"
-              target="_blank"
-              rel="noreferrer"
-              class="h-8 w-8 grid place-items-center rounded-lg bg-neutral-800 text-neutral-200 ring-1 ring-white/10"
-              aria-label="Facebook"
-              title="Facebook"
-            >
-              <svg viewBox="0 0 24 24" class="h-4 w-4" fill="currentColor" aria-hidden="true">
-                <path d="M22 12.06C22 6.504 17.523 2 12 2S2 6.504 2 12.06C2 17.08 5.656 21.245 10.438 22v-7.03H7.898v-2.91h2.54V9.845c0-2.522 1.492-3.915 3.777-3.915 1.094 0 2.238.197 2.238.197v2.475h-1.26c-1.242 0-1.63.776-1.63 1.57v1.887h2.773l-.443 2.91h-2.33V22C18.344 21.245 22 17.08 22 12.06z"/>
-              </svg>
-            </a>
-            <a
-              href="https://www.instagram.com/tapstationbar?igsh=dXQ5cGhoZDlpbGt2"
-              target="_blank"
-              rel="noreferrer"
-              class="h-8 w-8 grid place-items-center rounded-lg bg-neutral-800 text-neutral-200 ring-1 ring-white/10"
-              aria-label="Instagram"
-              title="Instagram"
-            >
-              <svg viewBox="0 0 24 24" class="h-4 w-4" fill="currentColor" aria-hidden="true">
-                <path d="M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9A5.5 5.5 0 0 1 16.5 22h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2zm0 2A3.5 3.5 0 0 0 4 7.5v9A3.5 3.5 0 0 0 7.5 20h9a3.5 3.5 0 0 0 3.5-3.5v-9A3.5 3.5 0 0 0 16.5 4h-9z"/>
-                <path d="M12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6z"/>
-                <path d="M17.25 6.25a.75.75 0 1 1 0 1.5.75.75 0 0 1 0-1.5z"/>
-              </svg>
-            </a>
+  <div class="mx-auto w-full bg-neutral-950 md:max-w-6xl md:px-6">
+    <div class="md:flex md:items-start md:gap-6">
+      <div class="w-full max-w-md md:w-[48rem] md:max-w-3xl">
+        <header class="bg-neutral-900 px-4 pb-4 pt-4 ring-1 ring-white/5 md:px-6">
+          <div class="relative -mx-4 -mt-4 mb-0 h-28 overflow-hidden md:-mx-6 md:h-44">
+            <img
+              src="/tap-station-hero.jpeg"
+              alt=""
+              width="1200"
+              height="300"
+              class="h-full w-full object-cover opacity-70"
+              loading="lazy"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-neutral-900 via-neutral-900/40 to-transparent"></div>
           </div>
+
+          <div class="relative -mt-7 flex items-start gap-3 md:-mt-10">
+            <img
+              src="/tap-station-logo.jpeg"
+              alt="Tap Station"
+              class="h-14 w-14 shrink-0 rounded-xl object-cover bg-neutral-800 ring-1 ring-white/10 shadow-[0_0_25px_rgba(212,175,55,0.20)] md:h-16 md:w-16"
+              loading="eager"
+            />
+
+            <div class="min-w-0 flex-1">
+              <div class="text-xl font-extrabold tracking-tight text-white">Tap Station</div>
+              <div class="text-sm font-semibold text-neutral-400">Menú Digital</div>
+            </div>
+
+            <div class="shrink-0 text-right">
+              <div class="flex items-center justify-end gap-2">
+                <a
+                  href="https://www.facebook.com/share/14fUHhw5V9N/"
+                  target="_blank"
+                  rel="noreferrer"
+                  class="h-8 w-8 grid place-items-center rounded-lg bg-neutral-800 text-neutral-200 ring-1 ring-white/10"
+                  aria-label="Facebook"
+                  title="Facebook"
+                >
+                  <svg viewBox="0 0 24 24" class="h-4 w-4" fill="currentColor" aria-hidden="true">
+                    <path d="M22 12.06C22 6.504 17.523 2 12 2S2 6.504 2 12.06C2 17.08 5.656 21.245 10.438 22v-7.03H7.898v-2.91h2.54V9.845c0-2.522 1.492-3.915 3.777-3.915 1.094 0 2.238.197 2.238.197v2.475h-1.26c-1.242 0-1.63.776-1.63 1.57v1.887h2.773l-.443 2.91h-2.33V22C18.344 21.245 22 17.08 22 12.06z"/>
+                  </svg>
+                </a>
+                <a
+                  href="https://www.instagram.com/tapstationbar?igsh=dXQ5cGhoZDlpbGt2"
+                  target="_blank"
+                  rel="noreferrer"
+                  class="h-8 w-8 grid place-items-center rounded-lg bg-neutral-800 text-neutral-200 ring-1 ring-white/10"
+                  aria-label="Instagram"
+                  title="Instagram"
+                >
+                  <svg viewBox="0 0 24 24" class="h-4 w-4" fill="currentColor" aria-hidden="true">
+                    <path d="M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9A5.5 5.5 0 0 1 16.5 22h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2zm0 2A3.5 3.5 0 0 0 4 7.5v9A3.5 3.5 0 0 0 7.5 20h9a3.5 3.5 0 0 0 3.5-3.5v-9A3.5 3.5 0 0 0 16.5 4h-9z"/>
+                    <path d="M12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6z"/>
+                    <path d="M17.25 6.25a.75.75 0 1 1 0 1.5.75.75 0 0 1 0-1.5z"/>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </header>
+
+        <div id="sticky-shortcuts" class="sticky top-0 z-10 bg-neutral-950/95 backdrop-blur ring-1 ring-white/5">
+          <nav class="overflow-x-auto whitespace-nowrap hide-scrollbar">
+            <div class="px-4 py-3 md:px-6">
+              {chips.map((c) => {
+                const isActive = c.id === defaultActiveChipId;
+                return (
+                  <a
+                    href={`#${c.id}`}
+                    data-chip
+                    data-id={c.id}
+                    class:list={[
+                      'mr-2 inline-flex items-center rounded-full px-4 py-2 text-sm font-bold transition',
+                      'ring-1',
+                      isActive
+                        ? 'bg-transparent ring-brand-amber text-brand-amber'
+                        : 'bg-transparent ring-neutral-800 text-neutral-400',
+                    ]}
+                  >
+                    {c.label}
+                  </a>
+                );
+              })}
+            </div>
+          </nav>
         </div>
-      </div>
-    </header>
 
-    <div class="sticky top-0 z-10 bg-neutral-950/95 backdrop-blur ring-1 ring-white/5">
-      <nav class="overflow-x-auto whitespace-nowrap hide-scrollbar">
-        <div class="px-4 py-3 md:px-6">
-          {chips.map((c) => {
-            const isActive = c.id === defaultActiveChipId;
-            return (
-              <a
-                href={`#${c.id}`}
-                data-chip
-                data-id={c.id}
-                class:list={[
-                  'mr-2 inline-flex items-center rounded-full px-4 py-2 text-sm font-bold transition',
-                  'ring-1',
-                  isActive
-                    ? 'bg-transparent ring-brand-amber text-brand-amber'
-                    : 'bg-transparent ring-neutral-800 text-neutral-400',
-                ]}
-              >
-                {c.label}
-              </a>
-            );
-          })}
-        </div>
-      </nav>
-    </div>
+        <main class="px-4 py-4 md:px-6">
+          {sections.map((s) => (
+            <section id={s.id} class="scroll-mt-24" key={s.id}>
+              <h2 class="text-sm font-extrabold text-brand-amber">{s.label}</h2>
 
-    <main class="px-4 py-4 md:px-6">
-      {sections.map((s) => (
-        <section id={s.id} class="scroll-mt-24" key={s.id}>
-          <h2 class="text-sm font-extrabold text-brand-amber">{s.label}</h2>
+              <div class="mt-3">
+                {s.products.map((p) => (
+                  <article class="border-b border-neutral-800 py-4" key={p.id}>
+                    <div class="flex items-start gap-3">
+                      <img
+                        src={p.imageUrl}
+                        alt={p.title}
+                        class="aspect-square w-24 rounded-md object-cover"
+                        loading="lazy"
+                      />
 
-          <div class="mt-3">
-            {s.products.map((p) => (
-              <article class="border-b border-neutral-800 py-4" key={p.id}>
-                <div class="flex items-start gap-3">
-                  <img
-                    src={p.imageUrl}
-                    alt={p.title}
-                    class="aspect-square w-24 rounded-md object-cover"
-                    loading="lazy"
-                  />
+                      <div class="min-w-0 flex-1">
+                        <div class="flex items-start justify-between gap-3">
+                          <div class="min-w-0">
+                            <div class="flex items-center gap-2">
+                              <h3 class="truncate text-sm font-extrabold text-white">{p.title}</h3>
+                              {p.discount ? (
+                                <span class="shrink-0 rounded-full bg-white/5 px-2 py-0.5 text-[11px] font-extrabold text-white ring-1 ring-white/10">
+                                  {p.discount}
+                                </span>
+                              ) : null}
+                            </div>
+                          </div>
+                        </div>
 
-                  <div class="min-w-0 flex-1">
-                    <div class="flex items-start justify-between gap-3">
-                      <div class="min-w-0">
-                        <div class="flex items-center gap-2">
-                          <h3 class="truncate text-sm font-extrabold text-white">{p.title}</h3>
-                          {p.discount ? (
-                            <span class="shrink-0 rounded-full bg-white/5 px-2 py-0.5 text-[11px] font-extrabold text-white ring-1 ring-white/10">
-                              {p.discount}
-                            </span>
-                          ) : null}
+                        <p class="mt-1 text-sm text-neutral-400 line-clamp-2">{p.description}</p>
+
+                        <div class="mt-3 flex items-end justify-between gap-3">
+                          <div class="flex items-baseline gap-2">
+                            <div class="text-base font-extrabold text-brand-amber">${p.price}</div>
+                            {p.oldPrice ? (
+                              <div class="text-sm font-bold text-neutral-500 line-through">${p.oldPrice}</div>
+                            ) : null}
+                          </div>
+
+                          <button
+                            type="button"
+                            data-add
+                            data-product-id={p.id}
+                            data-product-title={p.title}
+                            data-product-price={String(p.price)}
+                            class="h-9 w-9 shrink-0 grid place-items-center rounded-lg bg-brand-amber text-white font-black active:scale-[0.98]"
+                            aria-label={`Agregar ${p.title}`}
+                          >
+                            +
+                          </button>
                         </div>
                       </div>
                     </div>
+                  </article>
+                ))}
+              </div>
 
-                    <p class="mt-1 text-sm text-neutral-400 line-clamp-2">{p.description}</p>
+              <div class="h-4"></div>
+            </section>
+          ))}
+        </main>
+      </div>
 
-                    <div class="mt-3 flex items-end justify-between gap-3">
-                      <div class="flex items-baseline gap-2">
-                        <div class="text-base font-extrabold text-brand-amber">${p.price}</div>
-                        {p.oldPrice ? (
-                          <div class="text-sm font-bold text-neutral-500 line-through">${p.oldPrice}</div>
-                        ) : null}
-                      </div>
-
-                      <button
-                        type="button"
-                        data-add
-                        data-product-id={p.id}
-                        data-product-title={p.title}
-                        data-product-price={String(p.price)}
-                        class="h-9 w-9 shrink-0 grid place-items-center rounded-lg bg-brand-amber text-white font-black active:scale-[0.98]"
-                        aria-label={`Agregar ${p.title}`}
-                      >
-                        +
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </article>
-            ))}
+      <aside class="hidden md:block md:flex-1">
+        <div class="sticky top-6 rounded-2xl bg-neutral-950 ring-1 ring-white/10 shadow-[0_20px_60px_rgba(0,0,0,0.45)]">
+          <div class="px-4 py-4">
+            <div class="text-base font-extrabold text-white">Cuenta</div>
+            <div class="text-xs font-semibold text-neutral-400">Resumen de tu consumo</div>
           </div>
 
-          <div class="h-4"></div>
-        </section>
-      ))}
-    </main>
+          <div class="px-4 pb-4">
+            <div id="cuenta-panel-empty" class="rounded-2xl bg-neutral-900/40 px-4 py-4 ring-1 ring-white/10">
+              <div class="text-sm font-bold text-neutral-200">Aún no agregas nada</div>
+              <div class="mt-1 text-xs font-semibold text-neutral-400">Toca “+” para sumar a la cuenta.</div>
+            </div>
+
+            <div id="cuenta-panel-items" class="hidden divide-y divide-neutral-800"></div>
+
+            <div class="mt-4 flex items-center justify-between rounded-2xl bg-neutral-900/40 px-4 py-3 ring-1 ring-white/10">
+              <div class="text-sm font-bold text-neutral-200">Total</div>
+              <div id="cuenta-panel-total" class="text-base font-extrabold text-brand-amber">$0</div>
+            </div>
+          </div>
+        </div>
+      </aside>
+    </div>
 
     <button
       id="cuenta-button"
       type="button"
-      class="hidden fixed bottom-5 left-1/2 -translate-x-1/2 z-50 w-fit max-w-[92vw] rounded-full bg-neutral-900 px-7 py-4 text-center text-sm font-extrabold tracking-wide text-white ring-1 ring-white/10 shadow-[0_20px_60px_rgba(0,0,0,0.65)]"
+      class="hidden fixed bottom-5 left-1/2 -translate-x-1/2 z-50 w-fit max-w-[92vw] rounded-full bg-neutral-900 px-7 py-4 text-center text-sm font-extrabold tracking-wide text-white ring-1 ring-white/10 shadow-[0_20px_60px_rgba(0,0,0,0.65)] md:hidden"
     >
       <span>Ver total de la cuenta</span>
       <span class="opacity-80"> · </span>
       <span id="cuenta-count">0</span>
     </button>
 
-    <div id="cuenta-sheet" class="hidden fixed inset-0 z-[60]">
+    <div id="cuenta-sheet" class="hidden fixed inset-0 z-[60] md:hidden">
       <button
         id="cuenta-overlay"
         type="button"
@@ -356,6 +383,10 @@ const defaultActiveChipId = 'platos-especiales';
       const cuentaItemsEl = document.getElementById('cuenta-items');
       const cuentaTotalEl = document.getElementById('cuenta-total');
 
+      const cuentaPanelEmptyEl = document.getElementById('cuenta-panel-empty');
+      const cuentaPanelItemsEl = document.getElementById('cuenta-panel-items');
+      const cuentaPanelTotalEl = document.getElementById('cuenta-panel-total');
+
       const cuenta = new Map();
 
       const getCount = () => {
@@ -387,15 +418,15 @@ const defaultActiveChipId = 'platos-especiales';
       };
 
       const renderCuenta = () => {
-        if (!cuentaButton || !cuentaCountEl || !cuentaItemsEl || !cuentaTotalEl) return;
-
         const count = getCount();
-        cuentaCountEl.textContent = String(count);
-        if (count > 0) cuentaButton.classList.remove('hidden');
-        else cuentaButton.classList.add('hidden');
+        if (cuentaCountEl) cuentaCountEl.textContent = String(count);
+        if (cuentaButton) {
+          if (count > 0) cuentaButton.classList.remove('hidden');
+          else cuentaButton.classList.add('hidden');
+        }
 
         const items = Array.from(cuenta.values());
-        cuentaItemsEl.innerHTML = items
+        const listHtml = items
           .map((item) => {
             const lineTotal = item.price * item.qty;
             return `
@@ -412,7 +443,21 @@ const defaultActiveChipId = 'platos-especiales';
           })
           .join('');
 
-        cuentaTotalEl.textContent = money(getTotal());
+        if (cuentaItemsEl) cuentaItemsEl.innerHTML = listHtml;
+        if (cuentaTotalEl) cuentaTotalEl.textContent = money(getTotal());
+
+        if (cuentaPanelItemsEl && cuentaPanelEmptyEl) {
+          if (count > 0) {
+            cuentaPanelEmptyEl.classList.add('hidden');
+            cuentaPanelItemsEl.classList.remove('hidden');
+            cuentaPanelItemsEl.innerHTML = listHtml;
+          } else {
+            cuentaPanelEmptyEl.classList.remove('hidden');
+            cuentaPanelItemsEl.classList.add('hidden');
+            cuentaPanelItemsEl.innerHTML = '';
+          }
+        }
+        if (cuentaPanelTotalEl) cuentaPanelTotalEl.textContent = money(getTotal());
       };
 
       const addButtons = Array.from(document.querySelectorAll('[data-add]'));
@@ -489,55 +534,56 @@ const defaultActiveChipId = 'platos-especiales';
       if (location.hash) scrollToId(initial);
 
       const sectionEls = Array.from(document.querySelectorAll('section[id]'));
-      const observer = new IntersectionObserver(
-        (entries) => {
-          const intersecting = entries.filter((e) => e.isIntersecting);
-          if (intersecting.length === 0) return;
-
-          const best = intersecting.sort(
-            (a, b) =>
-              Math.abs(a.boundingClientRect.top) - Math.abs(b.boundingClientRect.top),
-          )[0];
-
-          const id = best?.target?.id;
-          if (!id) return;
-
-          if (lockedId && id !== lockedId) return;
-          if (lockedId && id === lockedId) lockedId = null;
-
-          setActive(id);
-          history.replaceState(null, '', `#${id}`);
-        },
-        {
-          root: null,
-          threshold: 0,
-          rootMargin: '-120px 0px -70% 0px',
-        },
-      );
-
-      sectionEls.forEach((s) => observer.observe(s));
-
       const lastSectionId = sectionEls[sectionEls.length - 1]?.id;
+
+      const stickyShortcutsEl = document.getElementById('sticky-shortcuts');
+      const getSpyOffset = () => {
+        const h = stickyShortcutsEl?.getBoundingClientRect().height;
+        return (typeof h === 'number' && Number.isFinite(h) ? h : 120) + 16;
+      };
+
+      const getActiveFromScroll = () => {
+        if (lastSectionId) {
+          const doc = document.documentElement;
+          const scrollBottom = window.scrollY + window.innerHeight;
+          const pageBottom = doc.scrollHeight;
+          if (pageBottom - scrollBottom <= 8) return lastSectionId;
+        }
+
+        const offset = getSpyOffset();
+        let current = sectionEls[0]?.id;
+        for (const s of sectionEls) {
+          const top = s.getBoundingClientRect().top;
+          if (top - offset <= 0) current = s.id;
+        }
+        return current;
+      };
+
       let raf = 0;
       const onScroll = () => {
         if (raf) return;
         raf = window.requestAnimationFrame(() => {
           raf = 0;
-          if (!lastSectionId) return;
           if (lockedId) return;
 
-          const doc = document.documentElement;
-          const scrollBottom = window.scrollY + window.innerHeight;
-          const pageBottom = doc.scrollHeight;
+          const id = getActiveFromScroll();
+          if (!id) return;
 
-          if (pageBottom - scrollBottom <= 8) {
-            setActive(lastSectionId);
-            history.replaceState(null, '', `#${lastSectionId}`);
-          }
+          setActive(id);
+          history.replaceState(null, '', `#${id}`);
         });
       };
 
-      window.addEventListener('scroll', onScroll, { passive: true });
+      const unlockOnTarget = () => {
+        if (!lockedId) return;
+        const id = getActiveFromScroll();
+        if (id && id === lockedId) lockedId = null;
+      };
+
+      window.addEventListener('scroll', () => {
+        onScroll();
+        unlockOnTarget();
+      }, { passive: true });
       window.addEventListener('resize', onScroll);
       onScroll();
     })();
