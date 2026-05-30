@@ -576,24 +576,35 @@ const defaultActiveChipId = 'platos-especiales';
         return currentId;
       };
 
-      let raf = 0;
-      const onScroll = () => {
-        if (raf) return;
-        raf = window.requestAnimationFrame(() => {
-          raf = 0;
-          if (lockedId) return;
-
-          const id = getActiveFromScroll();
-          if (!id) return;
-
-          setActive(id);
-        });
-      };
-
       const unlockOnTarget = () => {
         if (!lockedId) return;
         const id = getActiveFromScroll();
         if (id && id === lockedId) lockedId = null;
+      };
+
+      const updateActive = () => {
+        if (lockedId) return;
+        const id = getActiveFromScroll();
+        if (!id) return;
+        setActive(id);
+      };
+
+      let raf = 0;
+      const requestUpdate = () => {
+        if (raf) return;
+        raf = window.requestAnimationFrame(() => {
+          raf = 0;
+          updateActive();
+        });
+      };
+
+      let scrollStopTimer = null;
+      const onScroll = () => {
+        requestUpdate();
+        if (scrollStopTimer) window.clearTimeout(scrollStopTimer);
+        scrollStopTimer = window.setTimeout(() => {
+          requestUpdate();
+        }, 160);
       };
 
       window.addEventListener('scroll', () => {
@@ -601,6 +612,7 @@ const defaultActiveChipId = 'platos-especiales';
         unlockOnTarget();
       }, { passive: true });
       window.addEventListener('resize', onScroll);
+      window.addEventListener('orientationchange', onScroll);
       onScroll();
     })();
   </script>
