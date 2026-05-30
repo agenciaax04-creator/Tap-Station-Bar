@@ -1,0 +1,38 @@
+---
+import AdminLayout from '../../layouts/AdminLayout.astro';
+import CategorySorter from '../../components/admin/CategorySorter.tsx';
+import ProductAvailabilityList from '../../components/admin/ProductAvailabilityList.tsx';
+---
+
+<AdminLayout title="Tap Station · Admin">
+  <div class="flex items-start justify-between gap-4">
+    <div>
+      <h1 class="text-2xl font-black tracking-wide">Panel de Administración</h1>
+      <p class="mt-1 text-sm text-zinc-400">Orden de categorías y disponibilidad de productos.</p>
+    </div>
+    <a
+      class="rounded-xl bg-zinc-900/60 px-3 py-2 text-sm font-bold ring-1 ring-white/10 hover:bg-zinc-900"
+      href="/"
+    >
+      Ver menú
+    </a>
+  </div>
+
+  <div class="mt-6 grid grid-cols-1 gap-6 md:grid-cols-2">
+    <section class="rounded-2xl bg-zinc-950/40 ring-1 ring-white/10 p-4">
+      <h2 class="text-lg font-black">Categorías (Drag & Drop)</h2>
+      <p class="mt-1 text-sm text-zinc-400">Arrastra para reordenar. El orden se mantiene al soltar.</p>
+      <div class="mt-4">
+        <CategorySorter client:load />
+      </div>
+    </section>
+
+    <section class="rounded-2xl bg-zinc-950/40 ring-1 ring-white/10 p-4">
+      <h2 class="text-lg font-black">Disponibilidad (Toggles)</h2>
+      <p class="mt-1 text-sm text-zinc-400">Switches estables sin saltos de maquetación.</p>
+      <div class="mt-4">
+        <ProductAvailabilityList client:load />
+      </div>
+    </section>
+  </div>
+</AdminLayout>

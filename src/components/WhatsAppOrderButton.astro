@@ -1,0 +1,13 @@
+---
+const { phone = '5210000000000', message = 'Hola, quiero hacer un pedido en Tap Station' } = Astro.props;
+const href = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+---
+<a
+  href={href}
+  class="fixed bottom-5 left-1/2 -translate-x-1/2 z-50 inline-flex items-center gap-2 rounded-full bg-brand-amber px-5 py-3 text-sm font-black text-black shadow-glow ring-1 ring-black/30"
+  target="_blank"
+  rel="noreferrer"
+>
+  <span aria-hidden="true">WhatsApp</span>
+  <span class="opacity-90">Pedir</span>
+</a>

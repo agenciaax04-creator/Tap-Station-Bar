@@ -1,0 +1,20 @@
+---
+import '../styles/global.css';
+const { title = 'Tap Station · Admin' } = Astro.props;
+---
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="dark" />
+    <title>{title}</title>
+  </head>
+  <body class="bg-brand-bg text-zinc-100 antialiased">
+    <div class="min-h-dvh">
+      <div class="mx-auto w-full max-w-5xl px-4 py-6">
+        <slot />
+      </div>
+    </div>
+  </body>
+</html>

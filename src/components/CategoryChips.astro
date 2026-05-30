@@ -1,0 +1,30 @@
+---
+const {
+  categories = [
+    { id: 'promos', label: 'Promos 🔥' },
+    { id: 'cervezas', label: 'Cervezas 🍻' },
+    { id: 'burgers', label: 'Hamburguesas 🍔' },
+    { id: 'snacks', label: 'Snacks 🍗' },
+  ],
+  activeId = 'promos',
+} = Astro.props;
+---
+<nav class="w-full overflow-x-auto no-scrollbar">
+  <div class="flex gap-2 px-4 pb-2">
+    {categories.map((c) => (
+      <button
+        type="button"
+        class:list={[
+          'shrink-0 rounded-full px-3 py-1.5 text-sm font-semibold transition',
+          'ring-1 ring-white/10',
+          c.id === activeId
+            ? 'bg-brand-amber/15 text-brand-amber ring-brand-amber/40'
+            : 'bg-zinc-900/60 text-zinc-200 hover:bg-zinc-900',
+        ]}
+        data-category={c.id}
+      >
+        {c.label}
+      </button>
+    ))}
+  </div>
+</nav>

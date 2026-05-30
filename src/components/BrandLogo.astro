@@ -1,0 +1,12 @@
+---
+const { small = false } = Astro.props;
+---
+<div class="select-none">
+  <div class={small ? 'text-lg font-black tracking-wide' : 'text-2xl font-black tracking-wide'}>
+    <span class="text-zinc-100">Tap</span>
+    <span class="text-brand-amber"> Station</span>
+  </div>
+  <div class={small ? 'text-[10px] text-zinc-400 -mt-1 tracking-widest uppercase' : 'text-xs text-zinc-400 -mt-1 tracking-widest uppercase'}>
+    Menú Digital Inteligente
+  </div>
+</div>

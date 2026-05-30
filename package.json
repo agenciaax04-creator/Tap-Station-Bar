@@ -1,0 +1,26 @@
+{
+  "name": "tap-station",
+  "type": "module",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "check": "astro check"
+  },
+  "dependencies": {
+    "@astrojs/preact": "^3.5.0",
+    "@astrojs/tailwind": "^5.1.0",
+    "@supabase/supabase-js": "^2.45.4",
+    "astro": "^4.16.2",
+    "preact": "^10.24.0"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.20",
+    "@tailwindcss/line-clamp": "^0.4.4",
+    "postcss": "^8.4.41",
+    "tailwindcss": "^3.4.10",
+    "typescript": "^5.5.4"
+  }
+}
